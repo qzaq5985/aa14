@@ -1,0 +1,35 @@
+node
+
+파일까지 들어가서 
+
+npm install
+
+node cds_dht22_express.js  // 실행은 node
+
+node cds_dht22_mongodb.js
+
+
+cmd
+
+mongo
+
+mongod ?dbpath d:\mongodb\data1
+
+
+xaxis2, xaxis3 객체에 showticklabels: false 를 추가하면 xaxis1으로 설정된 온도 그래프에만 시간이 표시되게 할수있다.
+
+
+iotxx db의 특정 시간 이후의 데이터 100개를 csv 파일 (s100.csv)로 저장
+Advanced export with query (windows cmd 창에서 실행)
+
+Mongoexport ?d iotxx -c sensors /query:”{date: {$gt: ‘2018-05-29 22:26:06’}}”
+--limit=100 --fields date,temperature,humidity,luminosity --type=csv
+--out s100.csv
+
+
+ iot db의 최근(_id: -1) 데이터 500개를 csv 파일 (s500.csv)로 저장할 때,( cmd 창에서 실행 )
+
+mongoexport ?d iot -c sensors --sort “{_id: -1}” --limit=500 --fields
+date,temperature,humidity,luminosity --type=csv --out s500.csv
+
+localhost:3030/iot
